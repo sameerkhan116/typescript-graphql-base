@@ -1,0 +1,25 @@
+{
+  "name": "typescript-graphql_server",
+  "version": "1.0.0",
+  "description": "A TypeScript-GraphQL boilerplate server while trying out TypeORM.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "start": "nodemon --exec ts-node src/index.ts"
+  },
+  "author": "M. Sameer Khan",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "10.1.4",
+    "@types/ws": "^5.1.2",
+    "nodemon": "^1.17.5",
+    "ts-node": "^6.1.1",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.14.7"
+  }
+}
