@@ -46,7 +46,9 @@ const resolvers: ResolverMap = {
       const user = await User.create({
         ...rest,
         profileId: profileCreate.id,
-      }).save();
+      });
+      user.profile = profileCreate;
+      await user.save();
       return user;
     },
     deleteUser: async (_, { id }) => User.delete({ id }),

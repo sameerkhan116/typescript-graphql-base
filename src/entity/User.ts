@@ -5,8 +5,10 @@ import {
   BaseEntity,
   OneToOne,
   JoinColumn,
+  OneToMany,
 } from "typeorm";
 import { Profile } from "./Profile";
+import { Photo } from "./Photo";
 
 @Entity()
 export class User extends BaseEntity {
@@ -29,7 +31,10 @@ export class User extends BaseEntity {
   @Column({ nullable: true })
   profileId: number;
 
-  @OneToOne(type => Profile)
+  @OneToOne(() => Profile)
   @JoinColumn()
   profile: Profile;
+
+  @OneToMany(() => Photo, photo => photo.user)
+  photos: Photo[];
 }
